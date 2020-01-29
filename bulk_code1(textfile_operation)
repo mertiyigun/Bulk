@@ -1,0 +1,75 @@
+x = open("mert.txt", "w")                    #We are openning a text file as mert.txt
+x.write ("Ankara")                           #We are writing this text in it
+x.close()                                    #Closing it
+
+
+with open ("mert.txt", "r") as y:            #We are writing only "Ankara"
+    print (y.read())
+
+
+with open ("mert.txt", "a") as xyz:          #We are appending "Istanbul" as a new line
+    xyz.write(", Istanbul")
+    
+with open ("mert.txt", "r") as xyzt:
+    print ("{n}".format(n=str(xyzt.read() ) ) )
+
+******************
+OUTPUT:
+Ankara
+Ankara, Istanbul
+******************
+
+**********************************************************************************
+**********************************************************************************
+
+with open ("mert.txt", "r") as xyzt:
+    xyzt.read()
+    print ("{n}".format(n=str(xyzt.read() ) ) )
+    
+******************
+OUTPUT:
+Ankara
+******************
+
+**********************************************************************************
+**********************************************************************************
+
+with open ("mert.txt", "r") as xyzt:
+    xyzt.read()
+    xyzt.seek(0)
+    print ("{n}".format(n=str(xyzt.read() ) ) )
+
+******************
+OUTPUT:
+Ankara
+Ankara, Istanbul
+******************
+
+**********************************************************************************
+**********************************************************************************
+
+x = open("mert.txt", "w")                    #We are openning a text file as mert.txt
+x.write ("Ankara")                          #We are writing this text in it
+x.close()                                    #Closing it
+
+with open ("mert.txt", "r") as y:            #We are writing only "Ankara"
+    print (y.read())
+
+
+with open ("mert.txt", "a") as xyz:          #We are appending "Istanbul" as a new line
+    xyz.write("\nIstanbul")
+
+with open ("mert.txt", "r") as xyzt:
+    h=xyzt.readlines()
+    print (h)
+
+print (h[0])
+
+******************
+OUTPUT:
+Ankara
+['Ankara\n', 'Istanbul']
+Ankara
+******************
+
+NOTE: when we read something from text, \n means next element in list.
